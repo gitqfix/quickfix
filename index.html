@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Quick Fix</title>
+	<link rel="shortcut icon" href="img/logo.png">
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -16,14 +17,14 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="#"> Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Quem somos?</a>
+        <a class="nav-link" href="#"> Quem somos? </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Suporte</a>
+        <a class="nav-link active" href="#"> Suporte <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -32,9 +33,61 @@
     </form>
   </div>
 </nav>
-<div>
-	
 
+<div class="quickfix">
+	<br/>
+	<form>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Qual seu e-mail? (Entraremos em contato por ele)</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Qual o motivo do contato?</label>
+    <select class="form-control" id="exampleFormControlSelect1">
+      <option>1 - Adversidades com o aplicativo</option>
+      <option>2 - Adversidades com nossos prestadores de serviço</option>
+      <option>3 - Adversidades com login/cadastro </option>
+      <option>4 - Sugestões</option>
+      <option>5 - Outros</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect2">Qual o motivo do contato?</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+       <option>1 - Adversidades com o aplicativo</option>
+      <option>2 - Adversidades com nossos prestadores de serviço</option>
+      <option>3 - Adversidades com login/cadastro </option>
+      <option>4 - Sugestões</option>
+      <option>5 - Outros</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descreva brevemente a situação e adicione informações que julgue importante:</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+</form>
+<br/>
+	<button type="button" class="btn btn-warning "data-toggle="modal" data-target="#exampleModal"> Deixa que a gente resolve :) </button>
+	
+<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  	<div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Obrigado pelo feedback</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Seu feedback sempre ajuda o QuickFix a se tornar melhor para todos os usuários
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
