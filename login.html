@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/styles.css">
 <link rel="stylesheet" type="text/css" href="css/login.css">
 <script src="js/bootstrap.min.js"></script>
 </head>
@@ -17,19 +18,19 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#"> Home </a>
+        <a class="nav-link active" href="login.html"> Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"> Quem somos? </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#"> Suporte </a>
+        <a class="nav-link" href="Cadastro.html"> Cadastro <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html"> Suporte </a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">GoFix</button>
-    </form>
+
   </div>
 </nav>
     <div id="login">
@@ -50,7 +51,7 @@
                             <div class="form-group">
                                 <label for="remember-me"><span>Lembre-me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
                                 <input type="submit" name="submit" class="btn btn-info btn-md" value="Login">
-								<button type="button" class="btn btn-link">Cadastre-se</button>
+								<button type="button" class="btn btn-link"><a href="Cadastro.html">Cadastre-se</a></button>
 							</div>
                         </form>
                     </div>
