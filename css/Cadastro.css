@@ -1,18 +1,31 @@
-body {font-family: Arial, Helvetica, sans-serif;}
+@font-face {
+    font-family: 'arciform_sansregular';
+    src: url('arciform-webfont.woff2') format('woff2'),
+         url('arciform-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html {
+	font-family: 'arciform_sansregular' !important;
+  background-color: #212529 !important
+}
+body {
+background-color: #ff6000;}
 * {box-sizing: border-box}
 
-/* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 15px;
     margin: 5px 0 22px 0;
     display: inline-block;
-    border: none;
-    background: #f1f1f1;
+    border: 1px solid #f1f1f1;
+    background: #212529;
 }
 
 input[type=text]:focus, input[type=password]:focus {
-    background-color: #ddd;
+    background-color: #212529;
     outline: none;
 }
 
@@ -21,7 +34,6 @@ hr {
     margin-bottom: 25px;
 }
 
-/* Set a style for all buttons */
 button {
     background-color: #4CAF50;
     color: white;
@@ -37,33 +49,28 @@ button:hover {
     opacity:1;
 }
 
-/* Extra styles for the cancel button */
 .cancelbtn {
     padding: 14px 20px;
     background-color: #f44336;
 }
 
-/* Float cancel and signup buttons and add an equal width */
+
 .cancelbtn, .signupbtn {
   float: left;
   width: 50%;
 }
 
-/* Add padding to container elements */
-.container {
-    padding: 16px;
+
+
+
+#cadastro {
+  
+  background-color: #212529;
 }
 
-/* Clear floats */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
+input{
+color: #f1f1f1;
 }
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-    .cancelbtn, .signupbtn {
-       width: 100%;
-    }
+label, h1, p{
+color:#ff6000;
 }

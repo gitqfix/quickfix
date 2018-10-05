@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="css/cadastro.css">
 <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -17,23 +18,23 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="login.html">  Home </a>
+        <a class="nav-link" href="login.html"> Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#"> Quem somos? </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="Cadastro.html"> Cadastro <span class="sr-only">(current)</span></a>
+        <a class="nav-link active" href="Cadastro.html"> Cadastro </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="index.html"> Suporte </a>
+        <a class="nav-link" href="sup.html"> Suporte </a>
       </li>
     </ul>
 
   </div>
 </nav>
 <form action="/action_page.php" style="border:1px solid #212529">
-  <div class="container">
+  <div id="cadastro" class="container">
     <h1>Vem ser QuickFixer</h1>
     <p>Preencha os campos para fazer parte da nossa comunidade de pessoas que ajudam a ajudar</p>
     <hr>
@@ -62,10 +63,10 @@
       <input type="checkbox" checked="checked" name="prestserv" style="margin-bottom:15px"> Sou prestador de serviço
     </label>
     
-    <p>Confirmando seu cadastro você concorda com nossos termos!!! (Que nem são tantos assim na moral) <a href="#" style="color:dodgerblue">Termos & Privacidade do Quickfix </a>.</p>
+    <p>Confirmando seu cadastro você concorda com nossos termos!!! (Que nem são tantos assim na moral) <a href="termos.html" style="color:dodgerblue" target="_blank">Termos & Privacidade do Quickfix </a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Voltar :(</button>
+      <button  type="button" class="cancelbtn" onclick="window.location.href='login.html'">Voltar :(</button>
       <button type="submit" class="signupbtn">Concluir :)</button>
     </div>
   </div>
