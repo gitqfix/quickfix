@@ -8,7 +8,6 @@
          url('arciform-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 html {
@@ -34,11 +33,12 @@ form{
     background-color: #212529 !important;
 }
 textarea{
-  background-color: #212529
+  background-color: #212529 !important
+
 }
 .form-control, .exampleFormControlTextarea1{
-  color:#fff;
-  background-color: #212529;
+  color:#fff !important;
+  background-color: #212529 !important;
 }
 
 .nvlogo{
