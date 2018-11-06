@@ -86,7 +86,7 @@ float: right;
 a{
 	color:#ff6000;
 }
-#login .container #login-row #login-column #login-box {
+.container #login-row #login-column #login-box {
   margin-top: 120px;
   max-width: 600px;
   height: 320px;
