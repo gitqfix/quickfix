@@ -12,6 +12,14 @@ if (isset($_POST['signup'])) {
     $uname = trim($_POST['uname']); // Pegar os dados e remover espaços em branco
     $email = trim($_POST['email']);
     $upass = trim($_POST['pass']);
+	$cupass = trim($_POST['cpass']);
+ 
+	if ($upass != $cupass) {
+		$errTyp = "warning";
+        $errMSG = "Senhas não conferem";
+	
+	}else{
+ 
 
     // criar hash da senha com SHA256;
     $password = hash('sha256', $upass);
@@ -51,7 +59,7 @@ if (isset($_POST['signup'])) {
         $errTyp = "warning";
         $errMSG = "Email já utilizado";
     }
-
+	}
 }
 ?>
 <!DOCTYPE html>
@@ -94,7 +102,7 @@ if (isset($_POST['signup'])) {
   </div>
 </nav>
 <form method="post"style="border:1px solid #212529">
-  <div id="cadastro" class="container">
+  <div id="cadastro" class="container-fluid">
     <h1>Vem ser QuickFixer</h1>
 	   <?php
                 if (isset($errMSG)) {
@@ -114,16 +122,14 @@ if (isset($_POST['signup'])) {
     <input type="text" placeholder="Digite um nome de usuário" class="form-control" name="uname" required>
 
     <label for="email"><b>E-mail</b></label>
-    <input type="email" placeholder="Digite seu email aqui" class="form-control" name="email" required>
+    <input type="text" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$" placeholder="Digite seu email aqui" class="form-control" name="email" required>
 
     <label for="psw"><b>Senha</b></label>
     <input type="password" placeholder="Digite sua senha aqui" class="form-control" name="pass" required>
 
     <label for="psw-repeat"><b>Repita a senha (só pra ter certeza né?)</b></label>
-    <input type="password" placeholder="Digite a senha aqui tambem :)" class="form-control" name="psw-repeat" required>
-    <label>
-      <input type="checkbox" checked="checked" name="prestserv" style="margin-bottom:15px"> Sou prestador de serviço
-    </label>
+    <input type="password" placeholder="Digite a senha aqui tambem :)" class="form-control" name="cpass" required>
+
     
     <p>Confirmando seu cadastro você concorda com nossos termos!!! (Que nem são tantos assim na moral) <a href="termos.html" style="color:dodgerblue" target="_blank">Termos & Privacidade do Quickfix </a>.</p>
 
