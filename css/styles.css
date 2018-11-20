@@ -8,18 +8,28 @@
          url('arciform-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+
 }
 
 html {
 	font-family: 'arciform_sansregular' !important;
-  background-color: #212529 !important
+  background-color: #ff6100 !important
+}
+
+body{
+  color: #ff6100 !important
 }
 .quickfix{
-  background-color: #212529 !important;
+  background-color: #ff6100 !important;
   text-align: center !important
 }
-nav{
-  background-color: #ff5a00 !important
+.navbar, .navbar-expand-lg, .navbar-dark, .bg-dark{
+  background-color: #ff6100 !important
+}
+
+.conf{
+	/*color: black !important*/
+	background-color: black !important
 }
 form{
   color:#fff;
@@ -30,15 +40,14 @@ form{
   align-content: center
 }
 .form-group{
-    background-color: #212529 !important;
+    background-color: #ff6100 !important;
 }
 textarea{
-  background-color: #212529 !important
-
+  background-color: black
 }
 .form-control, .exampleFormControlTextarea1{
-  color:#fff !important;
-  background-color: #212529 !important;
+  color:#fff;
+  background-color: #ff6100 !important;
 }
 
 .nvlogo{
@@ -51,7 +60,7 @@ textarea{
 }
 
 .bg-light{
-	background-color: #000 !important;
+	background-color: #ff6100 !important;
 }
 
 .navbar-brand{
@@ -121,13 +130,13 @@ textarea{
   }
 
   .btn-warning {
-  color: #212529;
+  color: black;
   background-color: #ff7f00;
   border-color: #ff6100;
 }
 
 .btn-warning:hover {
-  color: #212529;
+  color: black;
  background-color: #ff6100 !important;
   border-color: #ff7f00 !important;
 }
@@ -137,14 +146,14 @@ textarea{
 }
 
 .btn-warning.disabled, .btn-warning:disabled {
-  color: #212529;
+  color: black;
   background-color: #ff6100 !important;
   border-color: #ff7f00 !important;
 }
 
 .btn-warning:not(:disabled):not(.disabled):active, .btn-warning:not(:disabled):not(.disabled).active,
 .show > .btn-warning.dropdown-toggle {
-  color: #212529;
+  color: black;
   background-color: #ff7f00;
   border-color: #ff6100;
 }
@@ -152,4 +161,9 @@ textarea{
 .btn-warning:not(:disabled):not(.disabled):active:focus, .btn-warning:not(:disabled):not(.disabled).active:focus,
 .show > .btn-warning.dropdown-toggle:focus {
   box-shadow: 0 0 0 0.2rem rgba(255, 97, 7, 0.5);
+}
+.nvlado{
+  mix-blend-mode: color-burn;
+  width: 16px;
+  height: auto;
 }
