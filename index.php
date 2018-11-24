@@ -46,6 +46,9 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 	  <li class="nav-item">
         <a class="nav-link" href="table/listagem.php"> Procurar serviço </a>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="table/meuschamados.php"> Meus serviços </a>
+      </li>
 
      
     </ul>
@@ -74,7 +77,9 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <div class="jumbotron">
         <h1>Olá, <?php echo $userRow['username']; ?></h1>
         <p>Agora que você está logado você pode: </p>
-        <p><a class="btn btn-primary btn-lg" href="form/insertion.php" role="button">Anunciar um serviço</a><a class="btn btn-primary btn-lg" href="table/listagem.php" role="button">Procurar um serviço</a></p>
+        <p><a class="btn btn-primary btn-lg" href="form/insertion.php" role="button">Anunciar um serviço</a>
+		<a class="btn btn-primary btn-lg" href="table/listagem.php" role="button">Procurar um serviço</a>
+		<a class="btn btn-primary btn-lg" href="table/meuschamados.php" role="button">Ver seus serviços</a></p>
     </div>
 </div>
 

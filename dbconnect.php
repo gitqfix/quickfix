@@ -3,7 +3,7 @@
 $db_host = "localhost";
 $db_name = "quickfix";
 $db_user = "root";
-$db_pass = "1234";
+$db_pass = "";
 
 
 $conn = new mysqli($db_host, $db_user, $db_pass, $db_name);

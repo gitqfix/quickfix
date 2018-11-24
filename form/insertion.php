@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-require_once 'dbconnect.php';
+require_once '../dbconnect.php';
 
 if (!isset($_SESSION['user'])) {
     header("Location: ../login.php");
@@ -10,7 +10,25 @@ if (!isset($_SESSION['user'])) {
 // Select das caracteristicas do user
 $res = $conn->query("SELECT * FROM users WHERE id=" . $_SESSION['user']);
 $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
+if (isset($_POST['btn-login'])) {
+//filter the inputs taken from the form
+$typeService = filter_input(INPUT_POST, 'typeService', FILTER_SANITIZE_STRING);
+$price = filter_input(INPUT_POST, 'price', FILTER_SANITIZE_STRING);
+$contato = filter_input(INPUT_POST, 'meiocontato', FILTER_SANITIZE_STRING);
+$userid =  $userRow['id'];
 
+//build the query string and pass it in the variable result_service
+$result_service = "INSERT INTO services (service_type, service_price, contato, userId) VALUES ('$typeService', '$price', '$contato', '$userid' )";
+
+//check if the insertion goes well
+mysqli_query($conn, $result_service);
+
+if (mysqli_insert_id($conn)) {
+	$sucMSG = "Sucesso";
+} else {
+	$errMSG = "Algo deu errado";;
+}
+}
 ?>
 <html lang="en">
 <head>
@@ -64,6 +82,9 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 	  <li class="nav-item">
         <a class="nav-link" href="../table/listagem.php"> Procurar serviço </a>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="../table/meuschamados.php"> Meus serviços </a>
+      </li>
 
      
     </ul>
@@ -84,11 +105,33 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
   </div>
 </nav>
 
+<?php
+			if (isset($errMSG)) {
+
+		?>
+		<div class="form-group">
+			<div class="alert alert-danger">
+				<span class="glyphicon glyphicon-info-sign"></span> <?php echo $errMSG; ?>
+			</div>
+		</div>
+	<?php
+								} elseif(isset($sucMSG)) {
+
+		?>
+		<div class="form-group">
+			<div class="alert alert-success">
+				<span class="glyphicon glyphicon-info-sign"></span> <?php echo $sucMSG; ?>
+			</div>
+		</div>
+	<?php
+								} 
+	?>
+	
 	<div class="container-contact100">
 		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
 		<div class="wrap-contact100">
-			<form method="POST" action="processInfo.php" class="contact100-form validate-form">
+			<form method="POST"  class="contact100-form validate-form">
 				<span class="contact100-form-title">
 					Quick Fix App
 				</span>
@@ -102,9 +145,14 @@ $userRow = mysqli_fetch_array($res, MYSQLI_ASSOC);
 					<input class="input100" type="number" name="price" placeholder="Preço">
 					<span class="focus-input100"></span>
 				</div>
+				<div class="wrap-input100 validate-input" data-validate="Coloque um meio de contato">
+					<input class="input100" type="text" name="meiocontato" placeholder="Email ou telefone">
+					<span class="focus-input100"></span>
+				</div>
+
 
 				<div class="container-contact100-form-btn">
-					<button class="contact100-form-btn">
+					<button class="contact100-form-btn" name="btn-login">
 						Enviar
 					</button>
 				</div>
